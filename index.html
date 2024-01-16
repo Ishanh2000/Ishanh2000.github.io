@@ -1,15 +1,70 @@
-<!DOCTYPE html>
-<!--AUM SHREEGANESHAAYA NAMAH||-->
+<!-- AUM SHREEGANESHA-SHAARADAA-GURUBHYO NAMAH|| -->
 <html>
-  <head>
-    <title>Ishanh2000</title>
-    <meta charset="utf-8" />
-  </head>
-  <body>
-    <center>
-      <h3>Welcome to my personal webiste on GitHub!<h3 />
-      <hr />
-      <h4>Still working on the webpage... will comlete soon! :)</h4>
-    </center>
-  </body>
+<style>
+  body {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  }
+
+  .box {
+    display: inline-block;
+    border: 1px solid black;
+    height: 50px;
+    width: 50px;
+    cursor: pointer;
+  }
+
+  .box:hover {
+    opacity: 0.6;
+  }
+
+  .box-red {
+    background-color: red;
+  }
+
+  .box-green {
+    background-color: green;
+  }
+
+  .replay {
+    padding: 5px;
+    margin: 5px;
+    border: 1px solid black;
+    border-radius: 3px;
+  }
+</style>
+
+<body>
+  <div style="text-align: center; margin: 15% 0;">
+    <div>
+      <div class="box" id="box-1-1" onclick="choose(1, 1)"></div>
+      <div class="box" id="box-1-2" onclick="choose(1, 2)"></div>
+      <div class="box" id="box-1-3" onclick="choose(1, 3)"></div>
+    </div>
+    <div>
+      <div class="box" id="box-2-1" onclick="choose(2, 1)"></div>
+      <div class="box" id="box-2-2" onclick="choose(2, 2)"></div>
+      <div class="box" id="box-2-3" onclick="choose(2, 3)"></div>
+    </div>
+    <div>
+      <div class="box" id="box-3-1" onclick="choose(3, 1)"></div>
+      <div class="box" id="box-3-2" onclick="choose(3, 2)"></div>
+      <div class="box" id="box-3-3" onclick="choose(3, 3)"></div>
+    </div>
+
+    <div id="announce">
+      <br /><br />
+      <div style="padding: 5px; font-weight: bold;" id="announce-message"></div>
+    </div>
+
+    <br /><br />
+
+    <div>
+      <div style="padding: 5px; font-weight: bold;">CURRENT PLAYER</div>
+      <div class="box" id="current-player-box"></div>
+    </div>
+  </div>
+</body>
+
+<script src="script.js"></script>
+
 </html>
