@@ -72,11 +72,14 @@ export default function Navigation() {
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-3 group">
             <div className="relative">
-              <div className="w-10 h-10 bg-gradient-to-br from-blue-600 to-blue-800 dark:from-blue-500 dark:to-blue-700 rounded-lg flex items-center justify-center shadow-md group-hover:shadow-lg transition-all duration-300 group-hover:scale-105">
-                <span className="text-lg font-bold text-white">
-                  IM
-                </span>
-              </div>
+              <img
+                src="/images/2025-12-29.webp"
+                alt="Ishanh Misra"
+                className="w-10 h-10 rounded-lg object-cover shadow-md group-hover:shadow-lg transition-all duration-300 group-hover:scale-105"
+                onError={e => {
+                  e.currentTarget.src = '/images/2022-01-20.png'
+                }}
+              />
             </div>
             <span className="hidden sm:inline text-lg font-medium text-slate-700 dark:text-slate-300 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
               Ishanh Misra
