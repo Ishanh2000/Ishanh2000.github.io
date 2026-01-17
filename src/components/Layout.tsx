@@ -1,16 +1,38 @@
-import { ReactNode } from 'react'
+import { ReactNode, useState, useEffect } from 'react'
 import { HiMail, HiPhone } from 'react-icons/hi'
 import { SiGithub, SiLinkedin, SiX } from 'react-icons/si'
 import Navigation from './Navigation'
+import CommandPalette from './CommandPalette'
 
 interface LayoutProps {
   children: ReactNode
 }
 
 export default function Layout({ children }: LayoutProps) {
+  const [isCommandPaletteOpen, setIsCommandPaletteOpen] = useState(false)
+
+  // Listen for keyboard shortcut (Alt + Shift + K)
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.altKey && e.shiftKey && e.key.toLowerCase() === 'k') {
+        e.preventDefault()
+        setIsCommandPaletteOpen(true)
+      }
+    }
+
+    window.addEventListener('keydown', handleKeyDown)
+    return () => window.removeEventListener('keydown', handleKeyDown)
+  }, [])
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 to-slate-100 dark:from-slate-900 dark:via-slate-800 dark:to-slate-900 transition-colors duration-300">
       <Navigation />
+      
+      {/* Command Palette */}
+      <CommandPalette 
+        isOpen={isCommandPaletteOpen} 
+        onClose={() => setIsCommandPaletteOpen(false)} 
+      />
       
       {/* Main content with top padding for fixed nav */}
       <main className="pt-16">
@@ -69,6 +91,14 @@ export default function Layout({ children }: LayoutProps) {
                   >
                     Contact
                   </a>
+                </li>
+                <li>
+                  <button
+                    onClick={() => setIsCommandPaletteOpen(true)}
+                    className="text-slate-600 dark:text-slate-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors text-left"
+                  >
+                    Keyboard Shortcuts
+                  </button>
                 </li>
               </ul>
             </div>
