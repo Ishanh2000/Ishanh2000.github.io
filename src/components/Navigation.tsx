@@ -5,8 +5,8 @@ import { saveThemePreference, getThemePreference } from '../utils/themeStorage'
 
 const navItems = [
   { name: 'Home', path: '/' },
-  { name: 'Blog', path: '/blog' },
   { name: 'Experience', path: '/experience' },
+  { name: 'Blog', path: '/blog' },
   { name: 'Contact', path: '/contact' },
 ]
 

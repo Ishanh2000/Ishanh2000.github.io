@@ -70,18 +70,18 @@ export default function Layout({ children }: LayoutProps) {
                 </li>
                 <li>
                   <a
-                    href="/blog"
-                    className="text-slate-600 dark:text-slate-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
-                  >
-                    Blog
-                  </a>
-                </li>
-                <li>
-                  <a
                     href="/experience"
                     className="text-slate-600 dark:text-slate-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
                   >
                     Experience
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="/blog"
+                    className="text-slate-600 dark:text-slate-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
+                  >
+                    Blog
                   </a>
                 </li>
                 <li>
