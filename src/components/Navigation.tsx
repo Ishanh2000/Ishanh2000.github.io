@@ -73,7 +73,7 @@ export default function Navigation() {
           <Link to="/" className="flex items-center space-x-3 group">
             <div className="relative">
               <img
-                src="/images/2025-12-29.webp"
+                src="/images/2025-12-29-nav.webp"
                 alt="Ishanh Misra"
                 className="w-10 h-10 rounded-lg object-cover shadow-md group-hover:shadow-lg transition-all duration-300 group-hover:scale-105"
                 onError={e => {
