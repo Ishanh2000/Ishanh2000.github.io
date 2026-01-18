@@ -78,10 +78,10 @@ export default function Layout({ children }: LayoutProps) {
                 </li>
                 <li>
                   <a
-                    href="/projects"
+                    href="/experience"
                     className="text-slate-600 dark:text-slate-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
                   >
-                    Projects
+                    Experience
                   </a>
                 </li>
                 <li>
