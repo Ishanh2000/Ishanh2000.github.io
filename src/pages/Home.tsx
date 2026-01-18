@@ -1,18 +1,36 @@
 import { Link } from 'react-router-dom'
+import { useState } from 'react'
 
 export default function Home() {
+  const [isImageExpanded, setIsImageExpanded] = useState(false)
+  
+  // Photo metadata
+  const photoDate = new Date('2025-12-29T12:58:07+05:30')
+  const formattedDate = photoDate.toLocaleDateString(undefined, { 
+    year: 'numeric', 
+    month: 'short', 
+    day: 'numeric' 
+  })
+  const formattedTime = photoDate.toLocaleTimeString(undefined, { 
+    hour: '2-digit', 
+    minute: '2-digit', 
+    second: '2-digit',
+    timeZoneName: 'short'
+  })
+  
   return (
     <div className="min-h-[calc(100vh-4rem)] flex items-start md:items-center justify-center p-4 sm:p-6 pt-8 md:pt-6">
       <div className="bg-white dark:bg-slate-800/95 rounded-2xl shadow-2xl border-2 border-slate-300 dark:border-slate-700 p-6 sm:p-8 md:p-12 max-w-4xl w-full transition-colors duration-300">
         {/* Header Section */}
         <div className="mb-6">
-          <div className="flex flex-col md:flex-row md:items-center gap-6 md:gap-8">
+          <div className="flex flex-col md:flex-row md:items-center gap-2 md:gap-8">
             {/* Photo */}
             <div className="flex justify-center md:justify-start flex-shrink-0">
               <img
                 src="/images/2025-12-29.webp"
                 alt="Ishanh Misra"
-                className="w-24 h-24 sm:w-32 sm:h-32 rounded-full object-cover border-4 border-slate-700 dark:border-slate-500 shadow-lg transition-transform duration-300 hover:scale-105"
+                className="w-24 h-24 sm:w-32 sm:h-32 rounded-full object-cover border-2 border-slate-700 dark:border-slate-500 shadow-lg transition-transform duration-300 hover:scale-105 cursor-pointer"
+                onClick={() => setIsImageExpanded(true)}
                 onError={e => {
                   e.currentTarget.src = '/images/2022-01-20.png'
                 }}
@@ -316,6 +334,50 @@ export default function Home() {
           </div>
         </div>
       </div>
+      
+      {/* Image Expand Modal */}
+      {isImageExpanded && (
+        <div 
+          className="fixed inset-0 bg-black/80 flex items-center justify-center z-50 p-4"
+          onClick={() => setIsImageExpanded(false)}
+        >
+          <div className="relative max-w-4xl" onClick={(e) => e.stopPropagation()}>
+            <img
+              src="/images/2025-12-29.webp"
+              alt="Ishanh Misra"
+              className="max-w-full max-h-[80vh] object-contain rounded-t-lg shadow-2xl"
+              onError={e => {
+                e.currentTarget.src = '/images/2022-01-20.png'
+              }}
+            />
+            <div className="bg-white dark:bg-slate-800 rounded-b-lg p-4 text-sm">
+              <div className="flex flex-col sm:flex-row sm:justify-between gap-2 text-slate-600 dark:text-slate-300">
+                <div>
+                  <span className="font-semibold text-slate-900 dark:text-white">Location: </span>
+                  <a 
+                    href="https://maps.app.goo.gl/YdMsU8bnezste4As9" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="underline decoration-slate-400 dark:decoration-slate-500 underline-offset-2 hover:text-blue-600 dark:hover:text-blue-400 hover:decoration-blue-600 dark:hover:decoration-blue-400 transition-colors"
+                  >
+                    Tijara Fort, Rajasthan, India
+                  </a>
+                </div>
+                <div>
+                  <span className="font-semibold text-slate-900 dark:text-white">Date: </span>
+                  {formattedDate} {formattedTime}
+                </div>
+              </div>
+            </div>
+            <button
+              className="absolute top-4 right-4 bg-white dark:bg-slate-800 text-slate-900 dark:text-white rounded-full w-10 h-10 flex items-center justify-center hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors shadow-lg"
+              onClick={() => setIsImageExpanded(false)}
+            >
+              ✕
+            </button>
+          </div>
+        </div>
+      )}
     </div>
   )
 }
