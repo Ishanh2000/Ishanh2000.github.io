@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom'
 import { useState } from 'react'
+import { HiDownload } from 'react-icons/hi'
 
 export default function Home() {
   const [isImageExpanded, setIsImageExpanded] = useState(false)
@@ -27,7 +28,7 @@ export default function Home() {
             {/* Photo */}
             <div className="flex justify-center md:justify-start flex-shrink-0">
               <img
-                src="/images/2025-12-29.webp"
+                src="/images/2025-12-29-main.webp"
                 alt="Ishanh Misra"
                 className="w-24 h-24 sm:w-32 sm:h-32 rounded-full object-cover border-2 border-slate-700 dark:border-slate-500 shadow-lg transition-transform duration-300 hover:scale-105 cursor-pointer"
                 onClick={() => setIsImageExpanded(true)}
@@ -58,12 +59,14 @@ export default function Home() {
                   Blog
                 </Link>
                 <a
-                  href="/resume.pdf"
+                  href="/resumes/v-sde-20250404.pdf"
+                  download="Ishanh Misra - SDE (2025-04-04).pdf"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="px-4 py-2 bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600 text-slate-700 dark:text-slate-200 text-sm font-medium rounded-full transition-colors duration-200 border border-slate-300 dark:border-slate-600"
+                  className="px-4 py-2 bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600 text-slate-700 dark:text-slate-200 text-sm font-medium rounded-full transition-colors duration-200 border border-slate-300 dark:border-slate-600 flex items-center gap-1.5"
                 >
-                  Resume
+                  <span>Resume</span>
+                  <HiDownload className="h-4 w-4" />
                 </a>
               </div>
             </div>
@@ -343,7 +346,7 @@ export default function Home() {
         >
           <div className="relative max-w-4xl" onClick={(e) => e.stopPropagation()}>
             <img
-              src="/images/2025-12-29.webp"
+              src="/images/2025-12-29-full.webp"
               alt="Ishanh Misra"
               className="max-w-full max-h-[80vh] object-contain rounded-t-lg shadow-2xl"
               onError={e => {
@@ -351,8 +354,8 @@ export default function Home() {
               }}
             />
             <div className="bg-white dark:bg-slate-800 rounded-b-lg p-4 text-sm">
-              <div className="flex flex-col sm:flex-row sm:justify-between gap-2 text-slate-600 dark:text-slate-300">
-                <div>
+              <div className="flex flex-col gap-2 text-slate-600 dark:text-slate-300">
+                <div className="break-words">
                   <span className="font-semibold text-slate-900 dark:text-white">Location: </span>
                   <a 
                     href="https://maps.app.goo.gl/YdMsU8bnezste4As9" 
@@ -363,7 +366,7 @@ export default function Home() {
                     Tijara Fort, Rajasthan, India
                   </a>
                 </div>
-                <div>
+                <div className="break-words">
                   <span className="font-semibold text-slate-900 dark:text-white">Date: </span>
                   {formattedDate} {formattedTime}
                 </div>
