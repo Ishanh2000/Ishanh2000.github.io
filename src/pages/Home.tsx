@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom'
 import { useState } from 'react'
+import { HiDownload } from 'react-icons/hi'
 
 export default function Home() {
   const [isImageExpanded, setIsImageExpanded] = useState(false)
@@ -58,12 +59,14 @@ export default function Home() {
                   Blog
                 </Link>
                 <a
-                  href="/resume.pdf"
+                  href="/resumes/v-sde-20250404.pdf"
+                  download="Ishanh Misra - SDE (2025-04-04).pdf"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="px-4 py-2 bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600 text-slate-700 dark:text-slate-200 text-sm font-medium rounded-full transition-colors duration-200 border border-slate-300 dark:border-slate-600"
+                  className="px-4 py-2 bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 dark:hover:bg-slate-600 text-slate-700 dark:text-slate-200 text-sm font-medium rounded-full transition-colors duration-200 border border-slate-300 dark:border-slate-600 flex items-center gap-1.5"
                 >
-                  Resume
+                  <span>Resume</span>
+                  <HiDownload className="h-4 w-4" />
                 </a>
               </div>
             </div>
