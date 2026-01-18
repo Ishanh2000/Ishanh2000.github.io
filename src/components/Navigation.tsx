@@ -4,10 +4,10 @@ import { HiSun, HiMoon, HiMenu, HiX } from 'react-icons/hi'
 import { saveThemePreference, getThemePreference } from '../utils/themeStorage'
 
 const navItems = [
-  { name: 'Home', path: '/' },
-  { name: 'Experience', path: '/experience' },
-  { name: 'Blog', path: '/blog' },
-  { name: 'Contact', path: '/contact' },
+  { name: 'Home', path: '/', shortcut: 'Ctrl+Shift+0' },
+  { name: 'Experience', path: '/experience', shortcut: 'Ctrl+Shift+1' },
+  { name: 'Blog', path: '/blog', shortcut: 'Ctrl+Shift+2' },
+  { name: 'Contact', path: '/contact', shortcut: 'Ctrl+Shift+3' },
 ]
 
 export default function Navigation() {
@@ -92,6 +92,7 @@ export default function Navigation() {
               <Link
                 key={item.path}
                 to={item.path}
+                title={`${item.name} (${item.shortcut})`}
                 className={`px-4 py-2 rounded-lg font-medium transition-all duration-200 ${
                   location.pathname === item.path
                     ? 'bg-blue-600 text-white'

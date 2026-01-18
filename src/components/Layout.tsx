@@ -1,4 +1,5 @@
 import { ReactNode, useState, useEffect } from 'react'
+import { useNavigate, Link } from 'react-router-dom'
 import { HiMail, HiPhone } from 'react-icons/hi'
 import { SiGithub, SiLinkedin, SiX } from 'react-icons/si'
 import Navigation from './Navigation'
@@ -10,19 +11,46 @@ interface LayoutProps {
 
 export default function Layout({ children }: LayoutProps) {
   const [isCommandPaletteOpen, setIsCommandPaletteOpen] = useState(false)
+  const navigate = useNavigate()
 
-  // Listen for keyboard shortcut (Alt + Shift + K)
+  // Listen for keyboard shortcuts
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
+      // Alt + Shift + K for command palette
       if (e.altKey && e.shiftKey && e.key.toLowerCase() === 'k') {
         e.preventDefault()
         setIsCommandPaletteOpen(true)
+      }
+      // Ctrl + Shift + 0/1/2 for navigation
+      if (e.ctrlKey && e.shiftKey) {
+        switch (e.key) {
+          case ')':
+          case '0':
+            e.preventDefault()
+            navigate('/')
+            break
+          case '!':
+          case '1':
+            e.preventDefault()
+            navigate('/experience')
+            break
+          case '@':
+          case '2':
+            e.preventDefault()
+            navigate('/blog')
+            break
+          case '#':
+          case '3':
+            e.preventDefault()
+            navigate('/contact')
+            break
+        }
       }
     }
 
     window.addEventListener('keydown', handleKeyDown)
     return () => window.removeEventListener('keydown', handleKeyDown)
-  }, [])
+  }, [navigate])
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 to-slate-100 dark:from-slate-900 dark:via-slate-800 dark:to-slate-900 transition-colors duration-300">
@@ -61,36 +89,40 @@ export default function Layout({ children }: LayoutProps) {
               </h3>
               <ul className="space-y-1.5 sm:space-y-2 text-sm sm:text-base">
                 <li>
-                  <a
-                    href="/"
+                  <Link
+                    to="/"
                     className="text-slate-600 dark:text-slate-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
+                    title="Home (Ctrl+Shift+0)"
                   >
                     Home
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a
-                    href="/experience"
+                  <Link
+                    to="/experience"
                     className="text-slate-600 dark:text-slate-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
+                    title="Experience (Ctrl+Shift+1)"
                   >
                     Experience
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a
-                    href="/blog"
+                  <Link
+                    to="/blog"
                     className="text-slate-600 dark:text-slate-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
+                    title="Blog (Ctrl+Shift+2)"
                   >
                     Blog
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a
-                    href="/contact"
+                  <Link
+                    to="/contact"
                     className="text-slate-600 dark:text-slate-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
+                    title="Contact (Ctrl+Shift+3)"
                   >
                     Contact
-                  </a>
+                  </Link>
                 </li>
                 <li>
                   <button

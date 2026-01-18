@@ -13,6 +13,22 @@ interface Shortcut {
 
 const shortcuts: Shortcut[] = [
   {
+    keys: ['Ctrl', 'Shift', '0'],
+    description: 'Go to Home',
+  },
+  {
+    keys: ['Ctrl', 'Shift', '1'],
+    description: 'Go to Experience',
+  },
+  {
+    keys: ['Ctrl', 'Shift', '2'],
+    description: 'Go to Blog',
+  },
+  {
+    keys: ['Ctrl', 'Shift', '3'],
+    description: 'Go to Contact',
+  },
+  {
     keys: ['Alt', 'Shift', 'M'],
     description: 'Toggle dark/light mode',
   },
