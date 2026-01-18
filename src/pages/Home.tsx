@@ -52,6 +52,45 @@ export default function Home() {
           </div>
         </div>
 
+        {/* About Section */}
+        <div className="mt-6 pt-6 border-t border-slate-200 dark:border-slate-700">
+          <h2 className="text-lg sm:text-xl font-bold text-slate-900 dark:text-white mb-4">
+            About
+          </h2>
+          
+          <div className="text-sm space-y-2">
+            <p className="text-slate-600 dark:text-slate-300">
+              Software Developer passionate about building elegant solutions to complex problems.
+            </p>
+            
+            <p className="text-slate-600 dark:text-slate-300">
+              <span className="font-semibold text-slate-900 dark:text-white">Current Employment: </span>
+              Software Engineer 2 (L61) at{' '}
+              <a 
+                href="https://www.microsoft.com/" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="underline decoration-slate-400 dark:decoration-slate-500 underline-offset-2 hover:text-blue-600 dark:hover:text-blue-400 hover:decoration-blue-600 dark:hover:decoration-blue-400 transition-colors"
+              >
+                Microsoft Corporation
+              </a>
+              {' '}(Since July 2022)
+            </p>
+            
+            <p className="text-slate-600 dark:text-slate-300">
+              <span className="font-semibold text-slate-900 dark:text-white">Current Location: </span>
+              <a 
+                href="https://en.wikipedia.org/wiki/Hyderabad" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="underline decoration-slate-400 dark:decoration-slate-500 underline-offset-2 hover:text-blue-600 dark:hover:text-blue-400 hover:decoration-blue-600 dark:hover:decoration-blue-400 transition-colors"
+              >
+                Hyderabad, Telangana, India
+              </a>
+            </p>
+          </div>
+        </div>
+
         {/* Skills Section */}
         <div className="mt-6 pt-6 border-t border-slate-200 dark:border-slate-700">
           <h2 className="text-lg sm:text-xl font-bold text-slate-900 dark:text-white mb-4">
@@ -69,6 +108,12 @@ export default function Home() {
             <div>
               <span className="font-semibold text-slate-900 dark:text-white">Frameworks & Tools: </span>
               <span className="text-slate-600 dark:text-slate-300">.NET, Node.js, Git, Angular, React, React Native</span>
+            </div>
+
+            {/* AI Tools */}
+            <div>
+              <span className="font-semibold text-slate-900 dark:text-white">AI Tools: </span>
+              <span className="text-slate-600 dark:text-slate-300">Cursor, GitHub Copilot, Claude (Sonnet/Opus), ChatGPT, Prompt Engineering</span>
             </div>
 
             {/* Databases */}
@@ -205,67 +250,67 @@ export default function Home() {
           
           <div className="space-y-2 text-sm">
             <div className="flex items-start gap-2">
-              <span className="text-blue-600 dark:text-blue-400">●</span>
-              <p className="text-slate-600 dark:text-slate-300">Engineering Excellence Award, Microsoft Corporation</p>
+              <span className="text-blue-600 dark:text-blue-400 relative top-[-1px]">●</span>
+              <p className="text-slate-600 dark:text-slate-300">Security First Initiative Award, Microsoft Corporation (2025)</p>
+            </div>
+
+            <div className="flex items-start gap-2">
+              <span className="text-blue-600 dark:text-blue-400 relative top-[-1px]">●</span>
+              <p className="text-slate-600 dark:text-slate-300">Engineering Excellence Award, Microsoft Corporation (2024)</p>
             </div>
             
             <div className="flex items-start gap-2">
-              <span className="text-blue-600 dark:text-blue-400">●</span>
-              <p className="text-slate-600 dark:text-slate-300">Security First Initiative Award, Microsoft Corporation</p>
-            </div>
-            
-            <div className="flex items-start gap-2">
-              <span className="text-blue-600 dark:text-blue-400">●</span>
+              <span className="text-blue-600 dark:text-blue-400 relative top-[-1px]">●</span>
               <p className="text-slate-600 dark:text-slate-300">Aditya Birla Scholarship recipient (2018-2022)</p>
             </div>
             
             <div className="flex items-start gap-2">
-              <span className="text-blue-600 dark:text-blue-400">●</span>
+              <span className="text-blue-600 dark:text-blue-400 relative top-[-1px]">●</span>
               <p className="text-slate-600 dark:text-slate-300">Academic Excellence Award (4 times), IIT Kanpur</p>
             </div>
             
             <div className="flex items-start gap-2">
-              <span className="text-blue-600 dark:text-blue-400">●</span>
+              <span className="text-blue-600 dark:text-blue-400 relative top-[-1px]">●</span>
               <p className="text-slate-600 dark:text-slate-300">First Prize in Summer of Code 2019, IIT Kanpur (sponsored by Nutanix & UPSIDC)</p>
             </div>
             
             <div className="flex items-start gap-2">
-              <span className="text-blue-600 dark:text-blue-400">●</span>
+              <span className="text-blue-600 dark:text-blue-400 relative top-[-1px]">●</span>
               <p className="text-slate-600 dark:text-slate-300">Student Guide (Counselling Service, IIT Kanpur) - Mentored five freshers maneuver through college life</p>
             </div>
             
             <div className="flex items-start gap-2">
-              <span className="text-blue-600 dark:text-blue-400">●</span>
+              <span className="text-blue-600 dark:text-blue-400 relative top-[-1px]">●</span>
               <p className="text-slate-600 dark:text-slate-300">Secretary (Association for Computing Activities, IITK) - Maintaining ACA website, finding projects for freshers</p>
             </div>
             
             <div className="flex items-start gap-2">
-              <span className="text-blue-600 dark:text-blue-400">●</span>
+              <span className="text-blue-600 dark:text-blue-400 relative top-[-1px]">●</span>
               <p className="text-slate-600 dark:text-slate-300">Selected for Semester Exchange at EPFL, Switzerland (Spring 2021)</p>
             </div>
             
             <div className="flex items-start gap-2">
-              <span className="text-blue-600 dark:text-blue-400">●</span>
+              <span className="text-blue-600 dark:text-blue-400 relative top-[-1px]">●</span>
               <p className="text-slate-600 dark:text-slate-300">Education Minister (DPS Azaad Nagar, Kanpur) - Guiding students about academia/olympiads/contests (2016-17)</p>
             </div>
             
             <div className="flex items-start gap-2">
-              <span className="text-blue-600 dark:text-blue-400">●</span>
+              <span className="text-blue-600 dark:text-blue-400 relative top-[-1px]">●</span>
               <p className="text-slate-600 dark:text-slate-300">Offered admission to Bachelor of Science at Indian Institute of Science (IISc), Bangalore</p>
             </div>
             
             <div className="flex items-start gap-2">
-              <span className="text-blue-600 dark:text-blue-400">●</span>
+              <span className="text-blue-600 dark:text-blue-400 relative top-[-1px]">●</span>
               <p className="text-slate-600 dark:text-slate-300">All India Rank 324 in JEE Advanced 2018 & AIR 598 in JEE Mains 2018</p>
             </div>
             
             <div className="flex items-start gap-2">
-              <span className="text-blue-600 dark:text-blue-400">●</span>
+              <span className="text-blue-600 dark:text-blue-400 relative top-[-1px]">●</span>
               <p className="text-slate-600 dark:text-slate-300">All India Rank 216 in KVPY 2016 (offered admission to IISc Bangalore)</p>
             </div>
             
             <div className="flex items-start gap-2">
-              <span className="text-blue-600 dark:text-blue-400">●</span>
+              <span className="text-blue-600 dark:text-blue-400 relative top-[-1px]">●</span>
               <p className="text-slate-600 dark:text-slate-300">National Talent Search Examination (NTSE) Scholar, 2016</p>
             </div>
           </div>
