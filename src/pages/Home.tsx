@@ -146,7 +146,13 @@ export default function Home() {
             {/* Azure */}
             <div>
               <span className="font-semibold text-slate-900 dark:text-white">Azure: </span>
-              <span className="text-slate-600 dark:text-slate-300">App Service, Service Fabric, Service Bus, Entra ID, DevOps, VMSS, Translator</span>
+              <span className="text-slate-600 dark:text-slate-300">App Service, Service Fabric, Service Bus, Entra ID, DevOps, VMSS, Translator, AI Foundry, AI Services</span>
+            </div>
+
+            {/* Other Clouds & APIs */}
+            <div>
+              <span className="font-semibold text-slate-900 dark:text-white">Other Clouds & APIs: </span>
+              <span className="text-slate-600 dark:text-slate-300">Amazon EC2, Google Maps</span>
             </div>
 
             {/* Presentation & Video */}
