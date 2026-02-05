@@ -4,6 +4,8 @@ import { HiDownload } from 'react-icons/hi'
 
 export default function Home() {
   const [isImageExpanded, setIsImageExpanded] = useState(false)
+  const [isImageLoading, setIsImageLoading] = useState(false)
+  const [isImageCached, setIsImageCached] = useState(false)
   
   // Photo metadata
   const photoDate = new Date('2025-12-29T12:58:07+05:30')
@@ -19,6 +21,25 @@ export default function Home() {
     timeZoneName: 'short'
   })
   
+  const handleImageClick = () => {
+    if (!isImageCached) {
+      setIsImageLoading(true)
+      const img = new Image()
+      img.src = '/images/2025-12-29-full.webp'
+      img.onload = () => {
+        setIsImageCached(true)
+        setIsImageLoading(false)
+        setIsImageExpanded(true)
+      }
+      img.onerror = () => {
+        setIsImageLoading(false)
+        setIsImageExpanded(true)
+      }
+    } else {
+      setIsImageExpanded(true)
+    }
+  }
+  
   return (
     <div className="min-h-[calc(100vh-4rem)] flex items-start md:items-center justify-center p-4 sm:p-6 pt-8 md:pt-6">
       <div className="bg-white dark:bg-slate-800/95 rounded-2xl shadow-2xl border-2 border-slate-300 dark:border-slate-700 p-6 sm:p-8 md:p-12 max-w-4xl w-full transition-colors duration-300">
@@ -31,7 +52,7 @@ export default function Home() {
                 src="/images/2025-12-29-main.webp"
                 alt="Ishanh Misra"
                 className="w-24 h-24 sm:w-32 sm:h-32 rounded-full object-cover border-2 border-slate-700 dark:border-slate-500 shadow-lg transition-transform duration-300 hover:scale-105 cursor-pointer"
-                onClick={() => setIsImageExpanded(true)}
+                onClick={handleImageClick}
                 onError={e => {
                   e.currentTarget.src = '/images/2022-01-20.png'
                 }}
@@ -343,6 +364,16 @@ export default function Home() {
           </div>
         </div>
       </div>
+      
+      {/* Loading Spinner */}
+      {isImageLoading && (
+        <div className="fixed inset-0 bg-black/80 flex items-center justify-center z-50">
+          <div className="flex flex-col items-center gap-4">
+            <div className="w-12 h-12 border-4 border-blue-500 border-t-transparent rounded-full animate-spin"></div>
+            <p className="text-white text-sm">Loading image...</p>
+          </div>
+        </div>
+      )}
       
       {/* Image Expand Modal */}
       {isImageExpanded && (
